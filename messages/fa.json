@@ -1,0 +1,30 @@
+{
+  "HomePage": {
+    "title": "سلام دنیا",
+    "welcome": {
+      "title": "Welcome to the home page"
+    },
+    "contact": "Go to the contact page"
+  },
+  "LocaleSwitcher": {
+    "EN": "EN",
+    "FA": "فا"
+  },
+  "NavBar": {
+    "products": "محصولات",
+    "home": "خانه",
+    "contact" :"ارتباط با ما",
+    "aboutUs": "درباره ما"
+  },
+  "contactForm": {
+    "name": "نام",
+    "email": "ایمیل",
+    "message": "پیام",
+    "submit": "تائید"
+  },
+  "validation": {
+    "invalid": "Email invalid",
+    "required": "Name required",
+    "min": "Message required to be at least 10 characters"
+  }
+}
