@@ -39,25 +39,25 @@ export default function LocaleSwitcherSelect({defaultValue, label}: Props) {
 
     return (
         <>
-            <select
-                defaultValue={defaultValue}
-                onChange={(e) => onSelectChange(e.target.value)}
-                aria-label={label}
-                className="w-[110px] h-8 border-none bg-transparent focus:ring-0 focus:ring-offset-0"
-            >
-                {routing.locales.map((locale) => (
+            {/*<select*/}
+            {/*    defaultValue={defaultValue}*/}
+            {/*    onChange={(e) => onSelectChange(e.target.value)}*/}
+            {/*    aria-label={label}*/}
+            {/*    className="w-[110px] h-8 border-none bg-transparent focus:ring-0 focus:ring-offset-0"*/}
+            {/*>*/}
+            {/*    {routing.locales.map((locale) => (*/}
 
-                    <option key={locale} value={locale}>
-                        <Image
-                            width={38}
-                            height={38}
-                            src={locale === "en" ? usaFlag : iranFlag}
-                            alt={locale === "en" ? "English" : "Persian"}
-                        />
-                        {t(locale.toUpperCase())}
-                    </option>
-                ))}
-            </select>
+            {/*        <option key={locale} value={locale}>*/}
+            {/*            <Image*/}
+            {/*                width={38}*/}
+            {/*                height={38}*/}
+            {/*                src={locale === "en" ? usaFlag : iranFlag}*/}
+            {/*                alt={locale === "en" ? "English" : "Persian"}*/}
+            {/*            />*/}
+            {/*            {t(locale.toUpperCase())}*/}
+            {/*        </option>*/}
+            {/*    ))}*/}
+            {/*</select>*/}
             <Select defaultValue={defaultValue} onValueChange={onSelectChange}>
                 <SelectTrigger
                     className='w-[110px] h-8 border-none bg-transparent focus:ring-0 focus:ring-offset-0'
