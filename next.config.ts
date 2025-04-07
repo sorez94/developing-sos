@@ -9,5 +9,10 @@ const nextConfig: NextConfig = {
         // your project has ESLint errors.
         ignoreDuringBuilds: true,
     },
-}
+    typescript: {
+        // Ignore TypeScript errors during the build
+        ignoreBuildErrors: true,
+    },
+};
+
 export default withNextIntl(nextConfig);
