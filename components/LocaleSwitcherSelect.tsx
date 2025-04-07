@@ -5,9 +5,6 @@ import {Locale, routing, usePathname, useRouter} from "@/i18n/routing";
 import {useParams} from "next/navigation";
 import {ReactNode} from "react";
 import {useTranslations} from "next-intl";
-import usaFlag from '../public/images/en.png'
-import iranFlag from '../public/images/fa.png'
-import Image from "next/image";
 
 type Props = {
     children: ReactNode;

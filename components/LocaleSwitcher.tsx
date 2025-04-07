@@ -1,6 +1,6 @@
-import { routing } from "@/i18n/routing";
-import {Globe, ShoppingBasket, UserRound} from "lucide-react";
-import { useLocale } from "next-intl";
+import {routing} from "@/i18n/routing";
+import {ShoppingBasket, UserRound} from "lucide-react";
+import {useLocale} from "next-intl";
 import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
 import Link from "next/link";
 
