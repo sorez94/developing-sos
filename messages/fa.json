@@ -14,7 +14,8 @@
     "products": "محصولات",
     "home": "خانه",
     "contact" :"ارتباط با ما",
-    "aboutUs": "درباره ما"
+    "aboutUs": "درباره ما",
+    "FAQ": "FAQ"
   },
   "contactForm": {
     "name": "نام",
