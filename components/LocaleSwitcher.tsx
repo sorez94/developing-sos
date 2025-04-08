@@ -10,10 +10,10 @@ export default function LocaleSwitcher() {
   return (
     <div className='flex items-center gap-2'>
         <Link href={`/${locale}/account`}>
-            <UserRound className='h-5 w-5 text-muted-foreground cursor-pointer' />
+            <UserRound className='h-5 w-5 mx-1 cursor-pointer' />
         </Link>
         <Link href={`/${locale}/shop`}>
-            <ShoppingBasket className='h-5 w-5 text-muted-foreground cursor-pointer' />
+            <ShoppingBasket className='h-5 w-5 mx-1 cursor-pointer' />
         </Link>
       <LocaleSwitcherSelect defaultValue={locale} label='Select a locale'>
         {routing.locales.map((cur) => (
