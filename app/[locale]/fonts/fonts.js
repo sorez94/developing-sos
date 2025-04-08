@@ -10,16 +10,11 @@ export const dirooz = localFont({
   ],
 });
 
-export const cinzel = localFont({
+export const glacier = localFont({
   src: [
     {
-      path: "./cinzel.regular.ttf",
+      path: "./Glacier.ttf",
       weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./cinzel.bold.ttf",
-      weight: "800",
       style: "normal",
     }
   ],

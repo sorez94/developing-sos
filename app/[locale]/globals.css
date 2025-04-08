@@ -58,6 +58,9 @@
   }
 }
 
+* {
+  font-weight: 600;
+}
 
 @layer base {
   * {

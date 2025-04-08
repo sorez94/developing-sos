@@ -5,7 +5,7 @@ import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {notFound} from "next/navigation";
 import "./globals.css";
-import {cinzel, dirooz} from "@/app/[locale]/fonts/fonts";
+import {cinzel, dirooz, glacier} from "@/app/[locale]/fonts/fonts";
 
 export const metadata: Metadata = {
     title: "Sense of stone",
@@ -31,7 +31,7 @@ export default async function RootLayout({
     const messages = await getMessages();
     return (
         <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"}>
-        <body className={locale === "en" ? cinzel.className : dirooz.className}>
+        <body className={locale === "en" ? glacier.className : dirooz.className}>
 
         <NextIntlClientProvider messages={messages}>
             <Navbar/>
