@@ -1,9 +1,11 @@
 import {getTranslations} from "next-intl/server";
+import Banner from "@/components/Banner";
 
 export default async function HomePage() {
     const t = await getTranslations("HomePage");
     return (
-        <div className='min-h-screen flex items-center justify-center p-4'>
+        <>
+            <Banner />
             <div className='w-full text-[55px] max-w-md bg-card p-8 rounded-lg shadow-sm'>
                 {t('title')}
             </div>
@@ -14,6 +16,6 @@ export default async function HomePage() {
                 into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
                 release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
                 software like Aldus PageMaker including versions of Lorem Ipsum. </h1>
-        </div>
+        </>
     );
 }
