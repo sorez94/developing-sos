@@ -1,16 +1,17 @@
 import {getTranslations} from "next-intl/server";
 import Banner from "@/components/Banner";
-import Lines from "@/components/landingpage/Lines";
 import LandingProduct from "@/components/landingpage/LandingProduct";
-import HorizontalImagePairCarousel from "@/components/landingpage/HorizontalImagePairCarousel";
+import LinesCarousel from "@/components/landingpage/LinesCarousel";
+import CategoryCarousel from "@/components/landingpage/CategoryCarousel";
 
 export default async function HomePage() {
     const t = await getTranslations("HomePage");
     return (
         <>
             <Banner />
-            <HorizontalImagePairCarousel />
+            <LinesCarousel />
             <LandingProduct />
+            <CategoryCarousel />
             <div className='w-full text-[55px] max-w-md bg-card p-8 rounded-lg shadow-sm'>
                 {t('title')}
             </div>
