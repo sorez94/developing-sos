@@ -5,6 +5,7 @@ import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {notFound} from "next/navigation";
 import "./globals.css";
+import "react-multi-carousel/lib/styles.css";
 import {cinzel, dirooz, glacier} from "@/app/[locale]/fonts/fonts";
 
 export const metadata: Metadata = {

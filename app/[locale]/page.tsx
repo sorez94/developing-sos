@@ -2,13 +2,14 @@ import {getTranslations} from "next-intl/server";
 import Banner from "@/components/Banner";
 import Lines from "@/components/landingpage/Lines";
 import LandingProduct from "@/components/landingpage/LandingProduct";
+import HorizontalImagePairCarousel from "@/components/landingpage/HorizontalImagePairCarousel";
 
 export default async function HomePage() {
     const t = await getTranslations("HomePage");
     return (
         <>
             <Banner />
-            <Lines />
+            <HorizontalImagePairCarousel />
             <LandingProduct />
             <div className='w-full text-[55px] max-w-md bg-card p-8 rounded-lg shadow-sm'>
                 {t('title')}
