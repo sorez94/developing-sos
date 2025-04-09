@@ -7,6 +7,7 @@ import {notFound} from "next/navigation";
 import "./globals.css";
 import "react-multi-carousel/lib/styles.css";
 import {cinzel, dirooz, glacier} from "@/app/[locale]/fonts/fonts";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
     title: "Sense of stone",
@@ -37,6 +38,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
             <Navbar/>
             {children}
+            <Footer />
         </NextIntlClientProvider>
         </body>
         </html>
