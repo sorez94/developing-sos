@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export default function LocaleSwitcher() {
   const locale = useLocale();
-
   return (
     <div className='flex items-center gap-2'>
         <Link href={`/${locale}/account`}>

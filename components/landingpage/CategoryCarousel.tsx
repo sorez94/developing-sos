@@ -44,7 +44,7 @@ const CategoryCarousel = () => {
     };
 
     return (
-        <div className='mt-20'>
+        <div>
             <h1 className='text-[60px] mb-4 text-center' style={{color: 'rgb(195 205 177)',}}>COLLECTIONS</h1>
             <Carousel
                 swipeable
@@ -62,7 +62,7 @@ const CategoryCarousel = () => {
                 itemClass="carousel-item-padding-40-px"
             >
                 {images.map((image, idx) => (
-                    <Link key={idx} href={`/en/product`}>
+                    <Link key={idx} href={`/${locale}/product`}>
                         <div
                             className="carousel-item relative overflow-hidden"
                             onMouseEnter={() => handleMouseEnter(idx)}

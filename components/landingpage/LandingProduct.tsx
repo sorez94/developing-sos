@@ -62,7 +62,7 @@ const LandingProduct = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row h-screen my-32">
+            <div className="flex flex-col lg:flex-row h-screen mt-32 mb-20">
                 <div className="lg:w-[70%] w-full">
                     <img
                         src="/images/landing-products/p4.png"
