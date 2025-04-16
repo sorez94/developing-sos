@@ -2,9 +2,10 @@
 
 import LocaleSwitcher from "./LocaleSwitcher";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import {useLocale, useTranslations} from "next-intl";
+import {usePathname} from "next/navigation";
 import clsx from "clsx";
+import Image from "next/image";
 
 export default function NavBar() {
     const locale = useLocale();
@@ -12,26 +13,30 @@ export default function NavBar() {
     const t = useTranslations("NavBar");
 
     const links = [
-        { href: `/${locale}`, label: t("home") },
-        { href: `/${locale}/contact-us`, label: t("contact") },
-        { href: `/${locale}/about-us`, label: t("aboutUs") },
-        { href: `/${locale}/faq`, label: t("FAQ") },
-        { href: `/${locale}/product`, label: t("products") },
+        {href: `/${locale}`, label: t("home")},
+        {href: `/${locale}/contact-us`, label: t("contact")},
+        {href: `/${locale}/about-us`, label: t("aboutUs")},
+        {href: `/${locale}/faq`, label: t("FAQ")},
+        {href: `/${locale}/product`, label: t("products")},
     ];
 
     return (
         <div
-            style={{ background: "rgba(210, 210, 208, 0.5)" }}
+            style={{background: "rgba(210, 210, 208, 0.5)"}}
             className="flex justify-between items-center py-4 h-[120px] px-20"
         >
+            <div className='flex gap-2 items-center justify-center'>
+                <Image src='/logo.png' alt='logo' width={80} height={40}/>
+                <h1 className='text-[22px]'> Sense Of Stone </h1>
+            </div>
             <div className="flex items-center justify-center">
-                {links.map(({ href, label }) => (
+                {links.map(({href, label}) => (
                     <Link
                         key={href}
                         href={href}
                         className={clsx(
                             "ml-[24px] text-[20px]",
-                                pathname === href ? "font-black" : "font-medium"
+                            pathname === href ? "font-black" : "font-medium"
                         )}
                     >
                         {label}
@@ -39,7 +44,7 @@ export default function NavBar() {
 
                 ))}
             </div>
-            <LocaleSwitcher />
+            <LocaleSwitcher/>
         </div>
     );
 }

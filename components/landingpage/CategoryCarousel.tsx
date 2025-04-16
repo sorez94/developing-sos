@@ -8,12 +8,11 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 
 const images = [
-    { src: '/images/category-carousel/cat-02.png', text: 'Category 1' },
-    { src: '/images/category-carousel/cat-03.png', text: 'Category 2' },
-    { src: '/images/category-carousel/cat-04.png', text: 'Category 3' },
-    { src: '/images/category-carousel/cat-02.png', text: 'Category 4' },
-    { src: '/images/category-carousel/cat-03.png', text: 'Category 5' },
-    { src: '/images/category-carousel/cat-04.png', text: 'Category 6' },
+    { src: '/images/category-carousel/cat-02.png', text: 'Table' },
+    { src: '/images/category-carousel/cat-03.png', text: 'Accessory' },
+    { src: '/images/category-carousel/cat-04.png', text: 'Pot' },
+    { src: '/images/category-carousel/cat-02.png', text: 'Plate and Bowl' },
+    { src: '/images/category-carousel/cat-04.png', text: 'Mirror' },
 ];
 
 const responsive = {
