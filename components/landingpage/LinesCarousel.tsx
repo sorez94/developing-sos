@@ -36,7 +36,8 @@ const LinesCarousel = () => {
 
     return (
         <div className='mt-20'>
-            <h1 className='font-dark mb-4 text-[60px] text-center' style={{color: 'rgb(195 205 177)',}}>PATTERNS</h1>
+            <h1 className='font-dark mb-2 lg:mb-4 xl:mb-4 2xl:mb-4 text-[30px] lg:text-[60px] xl:text-[60px] 2xl:text-[60px] text-center'
+                style={{color: 'rgb(195 205 177)',}}>PATTERNS</h1>
             <Carousel
                 swipeable
                 draggable
@@ -50,11 +51,11 @@ const LinesCarousel = () => {
                 customTransition="all 3.5s"
                 transitionDuration={1000}
                 containerClass="carousel-container"
-                itemClass="carousel-item-padding-40-px"
+                itemClass="carousel-item-padding-40-px flex justify-center" // مرکز چین کردن آیتم‌ها
             >
                 {imagePairs.map(({main, detail}, idx) => (
-                    <Link key={idx} href={`${locale}/product`}>
-                        <div key={idx} className="flex flex-col gap-5 p-2">
+                    <Link key={idx} href={`/${locale}/product`}>
+                        <div className="flex flex-col items-center gap-3 p-2">
                             <Image src={main} alt={`main-${idx}`} width={300} height={200}/>
                             <Image src={detail} alt={`detail-${idx}`} width={300} height={20}/>
                         </div>

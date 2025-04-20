@@ -44,7 +44,7 @@ const CategoryCarousel = () => {
 
     return (
         <div>
-            <h1 className='text-[60px] mb-4 text-center' style={{color: 'rgb(195 205 177)',}}>COLLECTIONS</h1>
+            <h1 className='text-[20px] lg:text-[60px] xl:text-[60px] 2xl:text-[60px] mb-4 text-center' style={{color: 'rgb(195 205 177)',}}>COLLECTIONS</h1>
             <Carousel
                 swipeable
                 draggable
