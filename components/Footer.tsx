@@ -11,13 +11,13 @@ const Footer = () => {
             >
                 <div className='w-[33%] mt-6 lg:mt-10 xl:mt-10 2xl:mt-10 px-2 lg:px-12 xl:px-12 2xl:px-12 flex flex-col items-center justify-start border-r-2 border-r-[#bbc3ab]'>
                     <h1 className='mb-4 lg:mb-8 xl:mb-8 2xl:mb-8 text-[14px] lg:text-[20px] xl:text-[20px] 2xl:text-[20px] '> Address </h1>
-                    <p className='text-[8px] text-[rgb(79,79,79)] text-center'>
+                    <p className='text-[8px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[rgb(79,79,79)] text-center'>
                         No 73, Modern Center, Eastern Yaft Abad, Tehran, Iran
                     </p>
                 </div>
                 <div className='w-[33%] mt-6 lg:mt-10 xl:mt-10 2xl:mt-10 px-2 lg:px-12 xl:px-12 2xl:px-12 flex flex-col items-center justify-start border-r-2 border-r-[#bbc3ab]'>
-                    <h1 className='mb-4 lg:mb-8 xl:mb-8 2xl:mb-8 text-[14px] lg:text-[20px] xl:text-[20px] 2xl:text-[20px] '> About Us</h1>
-                    <p className='text-[8px] text-[rgb(79,79,79)] text-center'>
+                    <h1 className='mb-4 lg:mb-8 xl:mb-8 2xl:mb-8 text-[14px] lg:text-[20px] xl:text-[20px] 2xl:text-[20px]'> About Us</h1>
+                    <p className='text-[8px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] text-[rgb(79,79,79)] text-center'>
                         Lorem ipsum dolor sit amet consectetur. Luctus risus eget scelerisque commodo. Feugiat quis
                         dictum
                         amet vel habitant dolor mi.
