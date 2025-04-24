@@ -54,7 +54,16 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
             </Link>
 
             <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2 w-full flex flex-wrap">
+                {/* main image comes first on mobile */}
+                <div className="md:w-1/2 w-full order-1 md:order-2">
+                    <Link href={`/${locale}/product/${path}`}>
+                        <img src={`/images/products/${path}/${mainImage}`}
+                             className="w-full h-full object-cover px-4 md:pl-10 md:pr-14 mb-4 md:mb-0"/>
+                    </Link>
+                </div>
+
+                {/* sub images come second on mobile */}
+                <div className="md:w-1/2 w-full flex flex-wrap order-2 md:order-1">
                     {subImages.map((img, idx) => (
                         <div key={idx} className="w-1/2 flex flex-col mb-4">
                             <img src={`/images/products/${path}/${img}`} alt=""
@@ -63,7 +72,7 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
                                 <p className='text-[14px] font-black'>head</p>
                                 <p className='text-[12px]'>Lorem Ipsum has been the industry's standard dummy text</p>
                                 <button
-                                    className="mt-2 text-sm text-black hover:text-white  bg-[rgb(202,215,178)] px-3 py-1 rounded hover:bg-green-700"
+                                    className="mt-2 text-sm text-black hover:text-white bg-[rgb(202,215,178)] px-3 py-1 rounded hover:bg-green-700"
                                     onClick={() => openModal(img)}
                                 >
                                     More Info
@@ -72,13 +81,8 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
                         </div>
                     ))}
                 </div>
-                <div className="md:w-1/2 w-full">
-                    <Link href={`/${locale}/product/${path}`}>
-                        <img src={`/images/products/${path}/${mainImage}`}
-                             className="w-full h-full object-cover px-4 md:pl-10 md:pr-14 mb-4 md:mb-0"/>
-                    </Link>
-                </div>
             </div>
+
 
             <ProductModal
                 isOpen={modalOpen}
