@@ -11,7 +11,7 @@ export default function ProductCategoryPage({params}) {
     const products = productsByCategory[section.id] || [];
 
     return (
-        <div className="px-4 md:px-10 py-10">
+        <div className="px-4 md:px-10 py-10 lg:mt-32 xl: mt-32 2xl: mt:32 mt-12">
             <h1
                 className="text-4xl md:text-5xl font-extrabold text-center text-[rgb(195_205_177)]
                    mb-12 tracking-tight uppercase"

@@ -40,18 +40,17 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
     return (
         <div>
             <Link href={`/${locale}/product/${path}`}>
-                <h1
-                    style={{color: 'rgb(195 205 177)'}}
-                    className="group text-[32px] md:text-[40px] px-4 md:px-10 mt-8 lg:mt-32 xl:mt-32 2xl:mt-32 mb-4 text-center cursor-pointer
-              transition-all duration-300 ease-in-out
-              hover:text-green-200 hover:scale-105 hover:underline hover:underline-offset-4"
-                >
-                    {title}
-                    <span
-                        className="inline-block ml-2 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1">
-                        <ArrowRight size={30}/>
-                    </span>
-                </h1>
+                <div className="flex justify-center items-center group
+                  text-[32px] md:text-[40px] px-4 md:px-10 mt-8 lg:mt-32 xl:mt-32 2xl:mt-32 mb-4
+                  cursor-pointer transition-all duration-300 ease-in-out
+                  hover:text-green-200 hover:scale-105 hover:underline hover:underline-offset-4"
+                     style={{ color: 'rgb(195 205 177)' }}>
+                    <span>{title}</span>
+                    <ArrowRight
+                        size={30}
+                        className="ml-2 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1"
+                    />
+                </div>
             </Link>
 
             <div className="flex flex-col md:flex-row">
