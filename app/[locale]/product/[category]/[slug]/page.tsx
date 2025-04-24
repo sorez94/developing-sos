@@ -1,15 +1,33 @@
 'use client'
 
-import { notFound, useParams } from 'next/navigation'
+import {notFound, useParams} from 'next/navigation'
 import productSections from '@/data/productSections'
+import {useCartStore} from "@/stores/cartStore";
+import {toast} from 'react-toastify';
+
 
 export default function SubProductDetailPage() {
-    const { category, slug } = useParams()
+    const {category, slug} = useParams()
     const section = productSections.find(p => p.path === category)
     if (!section) return notFound()
+    const addToCart = useCartStore((state) => state.addToCart)
 
     const product = section.subImages.find(sub => sub.slug === slug)
-    if (!product) return notFound()
+    if (!product) return notFound();
+
+    const cartItems = useCartStore(state => state.items)
+    const isAlreadyInCart = cartItems.some(item => item.id === product.id)
+
+    const handleAdd = () => {
+        addToCart({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            image: `/images/products/${section.path}/${product.filename}`,
+            quantity: 1
+        })
+        toast.success('Added to cart!')
+    }
 
     return (
         <div className="max-w-7xl mx-auto px-4 md:px-10 py-16 mt-20">
@@ -66,8 +84,13 @@ export default function SubProductDetailPage() {
                     </div>
 
                     <div>
-                        <button className="mt-4 inline-block bg-green-600 text-white px-6 py-2 rounded-xl text-sm font-semibold shadow hover:bg-green-700 transition-all">
-                            Add to Cart
+                        <button
+                            onClick={handleAdd}
+                            disabled={isAlreadyInCart}
+                            className={`mt-4 inline-block px-6 py-2 rounded-xl text-sm font-semibold shadow transition-all
+    ${isAlreadyInCart ? 'bg-gray-400 cursor-not-allowed text-white' : 'bg-green-600 text-white hover:bg-green-700'}`}
+                        >
+                            {isAlreadyInCart ? 'Already in Cart' : 'Add to Cart'}
                         </button>
                     </div>
                 </div>

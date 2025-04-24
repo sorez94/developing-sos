@@ -9,6 +9,9 @@ import "react-multi-carousel/lib/styles.css";
 import {dirooz, glacier} from "@/app/[locale]/fonts/fonts";
 import Footer from "@/components/Footer";
 import Copyright from "@/components/Copyright";
+import Toaster from "react-hot-toast";
+import { ToastContainer } from 'react-toastify';
+
 
 export const metadata: Metadata = {
     title: "Sense of stone",
@@ -39,6 +42,8 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
             <Navbar/>
             {children}
+            <Toaster position="top-center" />
+            <ToastContainer />
             <Footer/>
             <Copyright/>
         </NextIntlClientProvider>
