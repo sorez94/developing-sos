@@ -1,7 +1,11 @@
 'use client'
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import Link from "next/link";
+import {useLocale} from "next-intl";
+import productSections from '@/data/productSections';
+import {ArrowRight} from "lucide-react";
 
-const ProductModal = ({ isOpen, onClose, image }) => {
+const ProductModal = ({isOpen, onClose, image}) => {
     if (!isOpen) return null;
 
     return (
@@ -13,19 +17,20 @@ const ProductModal = ({ isOpen, onClose, image }) => {
                 >
                     ✖
                 </button>
-                <img src={image} alt="modal" className="w-full rounded-lg mb-4" />
+                <img src={image} alt="modal" className="w-full rounded-lg mb-4"/>
                 <h2 className="text-xl font-bold mb-2">Product Details</h2>
                 <p className="text-sm text-gray-600">
-                    This is a detailed description of the product. You can customize this with price, dimensions, materials, etc.
+                    This is a detailed description of the product.
                 </p>
             </div>
         </div>
     );
 };
 
-const ProductSection = ({ title, mainImage, subImages, path }) => {
+const ProductSection = ({title, mainImage, subImages, path}) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState("");
+    const locale = useLocale();
 
     const openModal = (img) => {
         setSelectedImage(`/images/products/${path}/${img}`);
@@ -34,20 +39,27 @@ const ProductSection = ({ title, mainImage, subImages, path }) => {
 
     return (
         <div>
-            <h1 style={{ color: 'rgb(195 205 177)' }}
-                className='text-[32px] md:text-[40px] px-4 md:px-10 mt-14 md:mt-20 mb-4 text-center'>
-                {title}
-            </h1>
+            <Link href={`/${locale}/product/${path}`}>
+                <h1
+                    style={{color: 'rgb(195 205 177)'}}
+                    className="group text-[32px] md:text-[40px] px-4 md:px-10 mt-8 lg:mt-32 xl:mt-32 2xl:mt-32 mb-4 text-center cursor-pointer
+              transition-all duration-300 ease-in-out
+              hover:text-green-200 hover:scale-105 hover:underline hover:underline-offset-4"
+                >
+                    {title}
+                    <span
+                        className="inline-block ml-2 transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-x-1">
+                        <ArrowRight size={30}/>
+                    </span>
+                </h1>
+            </Link>
+
             <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/2 w-full">
-                    <img src={`/images/products/${path}/${mainImage}`} alt=""
-                         className="w-full h-full object-cover px-4 md:pl-10 md:pr-14 mb-4 md:mb-0" />
-                </div>
                 <div className="md:w-1/2 w-full flex flex-wrap">
                     {subImages.map((img, idx) => (
                         <div key={idx} className="w-1/2 flex flex-col mb-4">
                             <img src={`/images/products/${path}/${img}`} alt=""
-                                 className="w-full h-full object-cover px-4 md:px-10" />
+                                 className="w-full h-full object-cover px-4 md:px-10"/>
                             <div className='pb-2 pt-2 text-center'>
                                 <p className='text-[14px] font-black'>head</p>
                                 <p className='text-[12px]'>Lorem Ipsum has been the industry's standard dummy text</p>
@@ -60,6 +72,12 @@ const ProductSection = ({ title, mainImage, subImages, path }) => {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className="md:w-1/2 w-full">
+                    <Link href={`/${locale}/product/${path}`}>
+                        <img src={`/images/products/${path}/${mainImage}`}
+                             className="w-full h-full object-cover px-4 md:pl-10 md:pr-14 mb-4 md:mb-0"/>
+                    </Link>
                 </div>
             </div>
 
@@ -75,11 +93,10 @@ const ProductSection = ({ title, mainImage, subImages, path }) => {
 const Page = () => {
     return (
         <>
-            <ProductSection title="TABLES" mainImage="01.jpg" subImages={["02.jpg", "03.jpg", "04.jpg", "05.jpg"]} path="tables" />
-            <ProductSection title="ACCESSORIES" mainImage="01.jpg" subImages={["02.jpg", "03.jpg", "04.jpg", "05.jpg"]} path="accessories" />
-            <ProductSection title="MIRRORS" mainImage="01.jpg" subImages={["02.jpg", "03.jpg", "04.jpg", "05.jpg"]} path="mirrors" />
-            <ProductSection title="PLATES" mainImage="01.jpg" subImages={["02.jpg", "03.jpg", "04.jpg", "05.jpg"]} path="plates" />
-            <ProductSection title="POTS" mainImage="01.jpg" subImages={["02.jpg", "03.jpg", "04.jpg", "05.jpg"]} path="pots" />
+            <div className='h-[28px] lg: h-[36px] xl: h-[36px] 2xl: h-[36px]'></div>
+            {productSections.map((section, i) => (
+                <ProductSection key={i} {...section} />
+            ))}
             <div className='h-[30px]'></div>
         </>
     );

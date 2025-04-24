@@ -6,7 +6,7 @@ import {getMessages} from "next-intl/server";
 import {notFound} from "next/navigation";
 import "./globals.css";
 import "react-multi-carousel/lib/styles.css";
-import {cinzel, dirooz, glacier} from "@/app/[locale]/fonts/fonts";
+import {dirooz, glacier} from "@/app/[locale]/fonts/fonts";
 import Footer from "@/components/Footer";
 import Copyright from "@/components/Copyright";
 
@@ -34,13 +34,13 @@ export default async function RootLayout({
     const messages = await getMessages();
     return (
         <html lang={locale} dir={locale === "en" ? "ltr" : "rtl"}>
-        <body className={locale === "en" ? glacier.className : dirooz.className}>
+        <body style={{overflowX: 'hidden'}} className={locale === "en" ? glacier.className : dirooz.className}>
 
         <NextIntlClientProvider messages={messages}>
             <Navbar/>
             {children}
-            <Footer />
-            <Copyright />
+            <Footer/>
+            <Copyright/>
         </NextIntlClientProvider>
         </body>
         </html>

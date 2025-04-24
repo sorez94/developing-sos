@@ -2,12 +2,11 @@
 
 import LocaleSwitcher from "./LocaleSwitcher";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import {useLocale, useTranslations} from "next-intl";
+import {usePathname} from "next/navigation";
 import clsx from "clsx";
-import Image from "next/image";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import {useState} from "react";
+import {Menu, X} from "lucide-react";
 
 export default function NavBar() {
     const locale = useLocale();
@@ -16,11 +15,11 @@ export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const links = [
-        { href: `/${locale}`, label: t("home") },
-        { href: `/${locale}/contact-us`, label: t("contact") },
-        { href: `/${locale}/about-us`, label: t("aboutUs") },
-        { href: `/${locale}/faq`, label: t("FAQ") },
-        { href: `/${locale}/product`, label: t("products") },
+        {href: `/${locale}`, label: t("home")},
+        {href: `/${locale}/contact-us`, label: t("contact")},
+        {href: `/${locale}/about-us`, label: t("aboutUs")},
+        {href: `/${locale}/faq`, label: t("FAQ")},
+        {href: `/${locale}/product`, label: t("products")},
     ];
 
     return (
@@ -42,7 +41,7 @@ export default function NavBar() {
                 </div>
 
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 gap-6 lg:gap-8">
-                    {links.map(({ href, label }) => (
+                    {links.map(({href, label}) => (
                         <Link
                             key={href}
                             href={href}
@@ -58,12 +57,12 @@ export default function NavBar() {
 
                 <div className="md:hidden">
                     <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-                        {menuOpen ? <X size={26} /> : <Menu size={26} />}
+                        {menuOpen ? <X size={26}/> : <Menu size={26}/>}
                     </button>
                 </div>
 
                 <div className="hidden md:block">
-                    <LocaleSwitcher />
+                    <LocaleSwitcher/>
                 </div>
             </div>
 
@@ -72,10 +71,10 @@ export default function NavBar() {
                     className={clsx(
                         "md:hidden absolute left-0 w-full z-40 shadow-md backdrop-blur-md bg-white/40 border-t border-white/30 transition-all duration-300"
                     )}
-                    style={{ top: "64px" }}
+                    style={{top: "64px"}}
                 >
                     <div className="flex flex-col items-start gap-4 px-4 py-4">
-                        {links.map(({ href, label }) => (
+                        {links.map(({href, label}) => (
                             <Link
                                 key={href}
                                 href={href}
@@ -88,7 +87,7 @@ export default function NavBar() {
                                 {label}
                             </Link>
                         ))}
-                        <LocaleSwitcher />
+                        <LocaleSwitcher/>
                     </div>
                 </div>
             )}
