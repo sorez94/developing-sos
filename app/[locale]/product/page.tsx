@@ -23,6 +23,9 @@ const ProductModal = ({ isOpen, onClose, subImage, productPath }) => {
                 <p className="text-sm text-gray-600 mb-4">
                     {subImage.description}
                 </p>
+                <p className="text-sm text-gray-600 mb-4">
+                    {subImage.price}
+                </p>
                 <Link href={`/${useLocale()}/product/${productPath}/${subImage.slug}`}>
                     <button className="w-full text-sm text-white bg-green-600 px-4 py-2 rounded hover:bg-green-700 transition-all">
                         Go to Full Product Page
@@ -76,8 +79,9 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
                             <img src={`/images/products/${path}/${img.filename}`} alt=""
                                  className="w-full h-full object-cover px-4 md:px-10"/>
                             <div className='pb-2 pt-2 text-center'>
-                                <p className='text-[14px] font-black'>{img.title}</p>
+                                <p className='text-[16px] font-black'>{img.title}</p>
                                 <p className='text-[12px]'>{img.description}</p>
+                                <p className='text-[16px]'>{img.price}</p>
                                 <button
                                     className="mt-2 text-sm text-black hover:text-white bg-[rgb(202,215,178)] px-3 py-1 rounded hover:bg-green-700"
                                     onClick={() => openModal(img)}

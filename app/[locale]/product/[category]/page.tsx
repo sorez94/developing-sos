@@ -35,11 +35,12 @@ export default function ProductCategoryPage({ params }) {
                         </div>
                         <div className="p-4 text-center">
                             <p className="text-[15px] font-bold text-gray-800 mb-1">{product.title}</p>
-                            <p className="text-sm text-gray-500 mb-3">{product.description}</p>
+                            <p className="text-sm text-gray-500">{product.description}</p>
+                            <p className="text-[15px] text-green-700 font-semibold mt-1">${product.price.toFixed(2)}</p>
 
                             <Link
                                 href={`/${locale}/product/${category}/${product.slug}`}
-                                className="inline-block mt-1 text-sm text-white bg-green-600 px-4 py-2 rounded-xl hover:bg-green-700 transition-all"
+                                className="inline-block mt-3 text-sm text-white bg-green-600 px-4 py-2 rounded-xl hover:bg-green-700 transition-all"
                             >
                                 Go to Full Product Page
                             </Link>

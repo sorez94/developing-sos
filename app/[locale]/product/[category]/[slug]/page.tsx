@@ -57,6 +57,10 @@ export default function SubProductDetailPage() {
                                 <th className="p-2 font-medium">Product ID</th>
                                 <td className="p-2">{product.id}</td>
                             </tr>
+                            <tr>
+                                <th className="p-2 font-medium">Price</th>
+                                <td className="p-2">{product.price}</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>

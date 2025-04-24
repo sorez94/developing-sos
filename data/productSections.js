@@ -7,10 +7,11 @@ const productSections = [
         subImages: [
             {
                 id: 1,
-                filename: "01.jpg",
+                filename: "02.jpg",
                 title: "Elegant Table Leg",
                 description: "Crafted from solid wood for durability and elegance.",
                 slug: "product-1",
+                price: 129.99,
                 highlights: [
                     "Made of solid oak wood",
                     "Smooth lacquer finish",
@@ -19,10 +20,11 @@ const productSections = [
             },
             {
                 id: 2,
-                filename: "02.jpg",
+                filename: "03.jpg",
                 title: "Modern Surface",
                 description: "High-gloss finish, easy to clean and scratch-resistant.",
                 slug: "product-2",
+                price: 149.99,
                 highlights: [
                     "Glossy surface with easy cleaning",
                     "Scratch-resistant material",
@@ -31,10 +33,11 @@ const productSections = [
             },
             {
                 id: 3,
-                filename: "03.jpg",
+                filename: "04.jpg",
                 title: "Color Options",
                 description: "Available in walnut, oak, and matte black.",
                 slug: "product-3",
+                price: 139.99,
                 highlights: [
                     "Available in 3 elegant colors",
                     "Matte and glossy options",
@@ -43,34 +46,11 @@ const productSections = [
             },
             {
                 id: 4,
-                filename: "04.jpg",
-                title: "Easy Assembly",
-                description: "Quick to set up with included tools and manual.",
-                slug: "product-4",
-                highlights: [
-                    "Tool-free assembly",
-                    "Includes instruction manual",
-                    "Compact packaging"
-                ]
-            },
-            {
-                id: 5,
                 filename: "05.jpg",
                 title: "Easy Assembly",
                 description: "Quick to set up with included tools and manual.",
                 slug: "product-4",
-                highlights: [
-                    "Tool-free assembly",
-                    "Includes instruction manual",
-                    "Compact packaging"
-                ]
-            },
-            {
-                id: 6,
-                filename: "06.jpg",
-                title: "Easy Assembly",
-                description: "Quick to set up with included tools and manual.",
-                slug: "product-4",
+                price: 109.99,
                 highlights: [
                     "Tool-free assembly",
                     "Includes instruction manual",
@@ -91,6 +71,7 @@ const productSections = [
                 title: "Brass Candle Holder",
                 description: "Elegant candle holder with antique brass finish.",
                 slug: "product-5",
+                price: 39.99,
                 highlights: [
                     "Handcrafted brass body",
                     "Stable round base",
@@ -103,6 +84,7 @@ const productSections = [
                 title: "Minimalist Clock",
                 description: "Perfect blend of style and function for modern spaces.",
                 slug: "product-6",
+                price: 59.99,
                 highlights: [
                     "Silent ticking mechanism",
                     "Sleek metal frame",
@@ -115,6 +97,7 @@ const productSections = [
                 title: "Decorative Vase",
                 description: "Handmade ceramic vase with unique patterns.",
                 slug: "product-7",
+                price: 45.99,
                 highlights: [
                     "Ceramic build with hand-painted details",
                     "Waterproof interior",
@@ -127,6 +110,7 @@ const productSections = [
                 title: "Sculptural Piece",
                 description: "Artistic centerpiece to elevate any room’s design.",
                 slug: "product-8",
+                price: 69.99,
                 highlights: [
                     "Modern abstract shape",
                     "Crafted from resin",
@@ -147,6 +131,7 @@ const productSections = [
                 title: "Vintage Oval Mirror",
                 description: "Classic design with a gold frame, perfect for entryways.",
                 slug: "product-9",
+                price: 89.99,
                 highlights: [
                     "Vintage-style gold frame",
                     "Beveled glass mirror",
@@ -159,6 +144,7 @@ const productSections = [
                 title: "Modern Wall Mirror",
                 description: "Frameless mirror that adds depth and light to any room.",
                 slug: "product-10",
+                price: 99.99,
                 highlights: [
                     "Frameless sleek design",
                     "Edge-polished glass",
@@ -171,6 +157,7 @@ const productSections = [
                 title: "Standing Mirror",
                 description: "Full-body mirror with wooden frame for bedrooms.",
                 slug: "product-11",
+                price: 129.99,
                 highlights: [
                     "Full-length body view",
                     "Solid wood frame",
@@ -183,6 +170,7 @@ const productSections = [
                 title: "Decorative Mirror Set",
                 description: "Set of 3 mirrors to create a stylish wall collage.",
                 slug: "product-12",
+                price: 119.99,
                 highlights: [
                     "Set of 3 mirrors",
                     "Geometric designs",
@@ -203,6 +191,7 @@ const productSections = [
                 title: "Stoneware Dinner Plate",
                 description: "Rustic charm with a durable stoneware construction.",
                 slug: "product-13",
+                price: 24.99,
                 highlights: [
                     "Chip-resistant stoneware",
                     "Rustic matte glaze",
@@ -215,6 +204,7 @@ const productSections = [
                 title: "Porcelain Plate Set",
                 description: "Elegant white finish, ideal for formal dinners.",
                 slug: "product-14",
+                price: 54.99,
                 highlights: [
                     "Set of 6 plates",
                     "Glossy porcelain surface",
@@ -227,6 +217,7 @@ const productSections = [
                 title: "Decorative Side Plate",
                 description: "Perfect for serving appetizers or desserts.",
                 slug: "product-15",
+                price: 19.99,
                 highlights: [
                     "8-inch diameter",
                     "Hand-painted border",
@@ -239,6 +230,7 @@ const productSections = [
                 title: "Colorful Collection",
                 description: "Mix and match vibrant styles for a playful table.",
                 slug: "product-16",
+                price: 34.99,
                 highlights: [
                     "4 multi-color designs",
                     "Vibrant and fade-proof",
@@ -259,6 +251,7 @@ const productSections = [
                 title: "Terracotta Pot",
                 description: "Natural finish that allows roots to breathe.",
                 slug: "product-17",
+                price: 22.49,
                 highlights: [
                     "Classic terracotta material",
                     "Porous and breathable",
@@ -271,6 +264,7 @@ const productSections = [
                 title: "Self-Watering Planter",
                 description: "Modern solution to keep your plants hydrated.",
                 slug: "product-18",
+                price: 32.99,
                 highlights: [
                     "Built-in water reservoir",
                     "Reduces watering frequency",
@@ -283,6 +277,7 @@ const productSections = [
                 title: "Ceramic Herb Pot",
                 description: "Perfect for kitchen windowsills and indoor herbs.",
                 slug: "product-19",
+                price: 27.99,
                 highlights: [
                     "Glazed ceramic design",
                     "Compact for small spaces",
@@ -295,6 +290,7 @@ const productSections = [
                 title: "Hanging Basket",
                 description: "Stylish and space-saving for small balconies.",
                 slug: "product-20",
+                price: 29.99,
                 highlights: [
                     "Comes with metal hanger",
                     "Lightweight and sturdy",
