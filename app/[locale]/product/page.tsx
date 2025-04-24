@@ -5,8 +5,8 @@ import {useLocale} from "next-intl";
 import productSections from '@/data/productSections';
 import {ArrowRight} from "lucide-react";
 
-const ProductModal = ({isOpen, onClose, image}) => {
-    if (!isOpen) return null;
+const ProductModal = ({ isOpen, onClose, subImage, productPath }) => {
+    if (!isOpen || !subImage) return null;
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -17,11 +17,17 @@ const ProductModal = ({isOpen, onClose, image}) => {
                 >
                     ✖
                 </button>
-                <img src={image} alt="modal" className="w-full rounded-lg mb-4"/>
-                <h2 className="text-xl font-bold mb-2">Product Details</h2>
-                <p className="text-sm text-gray-600">
-                    This is a detailed description of the product.
+                <img src={`/images/products/${productPath}/${subImage.filename}`} alt={subImage.title}
+                     className="w-full rounded-lg mb-4" />
+                <h2 className="text-xl font-bold mb-2">{subImage.title}</h2>
+                <p className="text-sm text-gray-600 mb-4">
+                    {subImage.description}
                 </p>
+                <Link href={`/${useLocale()}/product/${productPath}/${subImage.slug}`}>
+                    <button className="w-full text-sm text-white bg-green-600 px-4 py-2 rounded hover:bg-green-700 transition-all">
+                        Go to Full Product Page
+                    </button>
+                </Link>
             </div>
         </div>
     );
@@ -29,11 +35,12 @@ const ProductModal = ({isOpen, onClose, image}) => {
 
 const ProductSection = ({title, mainImage, subImages, path}) => {
     const [modalOpen, setModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState("");
     const locale = useLocale();
 
+    const [selectedSubImage, setSelectedSubImage] = useState(null);
+
     const openModal = (img) => {
-        setSelectedImage(`/images/products/${path}/${img}`);
+        setSelectedSubImage(img);
         setModalOpen(true);
     };
 
@@ -66,11 +73,11 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
                 <div className="md:w-1/2 w-full flex flex-wrap order-2 md:order-1">
                     {subImages.map((img, idx) => (
                         <div key={idx} className="w-1/2 flex flex-col mb-4">
-                            <img src={`/images/products/${path}/${img}`} alt=""
+                            <img src={`/images/products/${path}/${img.filename}`} alt=""
                                  className="w-full h-full object-cover px-4 md:px-10"/>
                             <div className='pb-2 pt-2 text-center'>
-                                <p className='text-[14px] font-black'>head</p>
-                                <p className='text-[12px]'>Lorem Ipsum has been the industry's standard dummy text</p>
+                                <p className='text-[14px] font-black'>{img.title}</p>
+                                <p className='text-[12px]'>{img.description}</p>
                                 <button
                                     className="mt-2 text-sm text-black hover:text-white bg-[rgb(202,215,178)] px-3 py-1 rounded hover:bg-green-700"
                                     onClick={() => openModal(img)}
@@ -87,7 +94,8 @@ const ProductSection = ({title, mainImage, subImages, path}) => {
             <ProductModal
                 isOpen={modalOpen}
                 onClose={() => setModalOpen(false)}
-                image={selectedImage}
+                subImage={selectedSubImage}
+                productPath={path}
             />
         </div>
     );
