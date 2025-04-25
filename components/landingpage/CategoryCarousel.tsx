@@ -1,31 +1,31 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image';
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import {useLocale} from "next-intl";
 
 const images = [
-    { src: '/images/category-carousel/cat-02.png', text: 'Table' },
-    { src: '/images/category-carousel/cat-03.png', text: 'Accessory' },
-    { src: '/images/category-carousel/cat-04.png', text: 'Pot' },
-    { src: '/images/category-carousel/cat-02.png', text: 'Plate and Bowl' },
-    { src: '/images/category-carousel/cat-04.png', text: 'Mirror' },
+    {src: '/images/category-carousel/cat-02.png', text: 'Table', path: 'tables'},
+    {src: '/images/category-carousel/cat-03.png', text: 'Accessory', path: 'accessories'},
+    {src: '/images/category-carousel/cat-04.png', text: 'Pot', path: 'pots'},
+    {src: '/images/category-carousel/cat-02.png', text: 'Plate and Bowl', path: 'plates'},
+    {src: '/images/category-carousel/cat-04.png', text: 'Mirror', path: 'mirrors'},
 ];
 
 const responsive = {
     desktop: {
-        breakpoint: { max: 3000, min: 1024 },
+        breakpoint: {max: 3000, min: 1024},
         items: 5,
     },
     tablet: {
-        breakpoint: { max: 1024, min: 640 },
+        breakpoint: {max: 1024, min: 640},
         items: 3,
     },
     mobile: {
-        breakpoint: { max: 640, min: 0 },
+        breakpoint: {max: 640, min: 0},
         items: 1,
     },
 };
@@ -44,7 +44,8 @@ const CategoryCarousel = () => {
 
     return (
         <div>
-            <h1 className='text-[20px] lg:text-[60px] xl:text-[60px] 2xl:text-[60px] mb-4 text-center' style={{color: 'rgb(195 205 177)',}}>COLLECTIONS</h1>
+            <h1 className='text-[20px] lg:text-[60px] xl:text-[60px] 2xl:text-[60px] mb-4 text-center'
+                style={{color: 'rgb(195 205 177)',}}>COLLECTIONS</h1>
             <Carousel
                 swipeable
                 draggable
@@ -61,7 +62,7 @@ const CategoryCarousel = () => {
                 itemClass="carousel-item-padding-40-px"
             >
                 {images.map((image, idx) => (
-                    <Link key={idx} href={`/${locale}/product`}>
+                    <Link key={idx} href={`/${locale}/product/${image.path}`}>
                         <div
                             className="carousel-item relative overflow-hidden"
                             onMouseEnter={() => handleMouseEnter(idx)}
@@ -74,7 +75,8 @@ const CategoryCarousel = () => {
                                 height={500}
                                 className={`w-full h-full object-cover transition-all duration-500 ease-in-out ${hoveredIndex === idx ? 'filter blur-none' : 'filter blur-sm'}`}
                             />
-                            <div className="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold bg-black bg-opacity-50">
+                            <div
+                                className="absolute inset-0 flex justify-center items-center text-white text-xl font-semibold bg-black bg-opacity-50">
                                 <span>{image.text}</span>
                             </div>
                         </div>

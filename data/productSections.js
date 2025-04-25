@@ -1,304 +1,642 @@
-const productSections = [
+const products = [
     {
-        id: 1,
-        title: "TABLES",
-        mainImage: "01.jpg",
-        path: "tables",
-        subImages: [
-            {
-                id: 1,
-                filename: "02.jpg",
-                title: "Elegant Table Leg",
-                description: "Crafted from solid wood for durability and elegance.",
-                slug: "product-1",
-                price: 129.99,
-                highlights: [
-                    "Made of solid oak wood",
-                    "Smooth lacquer finish",
-                    "Durable and stylish design"
-                ]
-            },
-            {
-                id: 2,
-                filename: "03.jpg",
-                title: "Modern Surface",
-                description: "High-gloss finish, easy to clean and scratch-resistant.",
-                slug: "product-2",
-                price: 149.99,
-                highlights: [
-                    "Glossy surface with easy cleaning",
-                    "Scratch-resistant material",
-                    "Minimalist modern style"
-                ]
-            },
-            {
-                id: 3,
-                filename: "04.jpg",
-                title: "Color Options",
-                description: "Available in walnut, oak, and matte black.",
-                slug: "product-3",
-                price: 139.99,
-                highlights: [
-                    "Available in 3 elegant colors",
-                    "Matte and glossy options",
-                    "UV-resistant coating"
-                ]
-            },
-            {
-                id: 4,
-                filename: "05.jpg",
-                title: "Easy Assembly",
-                description: "Quick to set up with included tools and manual.",
-                slug: "product-4",
-                price: 109.99,
-                highlights: [
-                    "Tool-free assembly",
-                    "Includes instruction manual",
-                    "Compact packaging"
-                ]
-            }
-        ]
+        id: '1-main',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "01.jpg",
+        title: "Main Image - TABLES",
+        description: "",
+        slug: "main-tables",
+        price: 0,
+        highlights: [],
+        isMain: true,
+        isUnique: false
+        ,
+        showOnProduct: true
     },
     {
-        id: 2,
-        title: "ACCESSORIES",
-        mainImage: "01.jpg",
-        path: "accessories",
-        subImages: [
-            {
-                id: 5,
-                filename: "02.jpg",
-                title: "Brass Candle Holder",
-                description: "Elegant candle holder with antique brass finish.",
-                slug: "product-5",
-                price: 39.99,
-                highlights: [
-                    "Handcrafted brass body",
-                    "Stable round base",
-                    "Antique golden finish"
-                ]
-            },
-            {
-                id: 6,
-                filename: "03.jpg",
-                title: "Minimalist Clock",
-                description: "Perfect blend of style and function for modern spaces.",
-                slug: "product-6",
-                price: 59.99,
-                highlights: [
-                    "Silent ticking mechanism",
-                    "Sleek metal frame",
-                    "Battery operated"
-                ]
-            },
-            {
-                id: 7,
-                filename: "04.jpg",
-                title: "Decorative Vase",
-                description: "Handmade ceramic vase with unique patterns.",
-                slug: "product-7",
-                price: 45.99,
-                highlights: [
-                    "Ceramic build with hand-painted details",
-                    "Waterproof interior",
-                    "Great for dried or fresh flowers"
-                ]
-            },
-            {
-                id: 8,
-                filename: "05.jpg",
-                title: "Sculptural Piece",
-                description: "Artistic centerpiece to elevate any room’s design.",
-                slug: "product-8",
-                price: 69.99,
-                highlights: [
-                    "Modern abstract shape",
-                    "Crafted from resin",
-                    "Matte stone finish"
-                ]
-            }
-        ]
+        id: '1',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "02.jpg",
+        title: "Elegant Table Leg",
+        description: "Crafted from solid wood for durability and elegance.",
+        slug: "product-1",
+        price: 129.99,
+        highlights: ["Made of solid oak wood", "Smooth lacquer finish", "Durable and stylish design"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
     },
     {
-        id: 3,
-        title: "MIRRORS",
-        mainImage: "01.jpg",
-        path: "mirrors",
-        subImages: [
-            {
-                id: 9,
-                filename: "02.jpg",
-                title: "Vintage Oval Mirror",
-                description: "Classic design with a gold frame, perfect for entryways.",
-                slug: "product-9",
-                price: 89.99,
-                highlights: [
-                    "Vintage-style gold frame",
-                    "Beveled glass mirror",
-                    "Wall-mount ready"
-                ]
-            },
-            {
-                id: 10,
-                filename: "03.jpg",
-                title: "Modern Wall Mirror",
-                description: "Frameless mirror that adds depth and light to any room.",
-                slug: "product-10",
-                price: 99.99,
-                highlights: [
-                    "Frameless sleek design",
-                    "Edge-polished glass",
-                    "Easy wall mounting"
-                ]
-            },
-            {
-                id: 11,
-                filename: "04.jpg",
-                title: "Standing Mirror",
-                description: "Full-body mirror with wooden frame for bedrooms.",
-                slug: "product-11",
-                price: 129.99,
-                highlights: [
-                    "Full-length body view",
-                    "Solid wood frame",
-                    "Tiltable angle support"
-                ]
-            },
-            {
-                id: 12,
-                filename: "05.jpg",
-                title: "Decorative Mirror Set",
-                description: "Set of 3 mirrors to create a stylish wall collage.",
-                slug: "product-12",
-                price: 119.99,
-                highlights: [
-                    "Set of 3 mirrors",
-                    "Geometric designs",
-                    "Black metal borders"
-                ]
-            }
-        ]
+        id: '2',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "03.jpg",
+        title: "Modern Surface",
+        description: "High-gloss finish, easy to clean and scratch-resistant.",
+        slug: "product-2",
+        price: 149.99,
+        highlights: ["Glossy surface with easy cleaning", "Scratch-resistant material", "Minimalist modern style"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
     },
     {
-        id: 4,
-        title: "PLATES",
-        mainImage: "01.jpg",
-        path: "plates",
-        subImages: [
-            {
-                id: 13,
-                filename: "02.jpg",
-                title: "Stoneware Dinner Plate",
-                description: "Rustic charm with a durable stoneware construction.",
-                slug: "product-13",
-                price: 24.99,
-                highlights: [
-                    "Chip-resistant stoneware",
-                    "Rustic matte glaze",
-                    "Microwave & dishwasher safe"
-                ]
-            },
-            {
-                id: 14,
-                filename: "03.jpg",
-                title: "Porcelain Plate Set",
-                description: "Elegant white finish, ideal for formal dinners.",
-                slug: "product-14",
-                price: 54.99,
-                highlights: [
-                    "Set of 6 plates",
-                    "Glossy porcelain surface",
-                    "Scratch-resistant finish"
-                ]
-            },
-            {
-                id: 15,
-                filename: "04.jpg",
-                title: "Decorative Side Plate",
-                description: "Perfect for serving appetizers or desserts.",
-                slug: "product-15",
-                price: 19.99,
-                highlights: [
-                    "8-inch diameter",
-                    "Hand-painted border",
-                    "Perfect for sides or snacks"
-                ]
-            },
-            {
-                id: 16,
-                filename: "05.jpg",
-                title: "Colorful Collection",
-                description: "Mix and match vibrant styles for a playful table.",
-                slug: "product-16",
-                price: 34.99,
-                highlights: [
-                    "4 multi-color designs",
-                    "Vibrant and fade-proof",
-                    "Safe for daily use"
-                ]
-            }
-        ]
+        id: '3',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "04.jpg",
+        title: "Color Options",
+        description: "Available in walnut, oak, and matte black.",
+        slug: "product-3",
+        price: 139.99,
+        highlights: ["Available in 3 elegant colors", "Matte and glossy options", "UV-resistant coating"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
     },
     {
-        id: 5,
-        title: "POTS",
-        mainImage: "01.jpg",
-        path: "pots",
-        subImages: [
-            {
-                id: 17,
-                filename: "02.jpg",
-                title: "Terracotta Pot",
-                description: "Natural finish that allows roots to breathe.",
-                slug: "product-17",
-                price: 22.49,
-                highlights: [
-                    "Classic terracotta material",
-                    "Porous and breathable",
-                    "Great for indoor plants"
-                ]
-            },
-            {
-                id: 18,
-                filename: "03.jpg",
-                title: "Self-Watering Planter",
-                description: "Modern solution to keep your plants hydrated.",
-                slug: "product-18",
-                price: 32.99,
-                highlights: [
-                    "Built-in water reservoir",
-                    "Reduces watering frequency",
-                    "Ideal for busy plant lovers"
-                ]
-            },
-            {
-                id: 19,
-                filename: "04.jpg",
-                title: "Ceramic Herb Pot",
-                description: "Perfect for kitchen windowsills and indoor herbs.",
-                slug: "product-19",
-                price: 27.99,
-                highlights: [
-                    "Glazed ceramic design",
-                    "Compact for small spaces",
-                    "Includes drainage hole"
-                ]
-            },
-            {
-                id: 20,
-                filename: "05.jpg",
-                title: "Hanging Basket",
-                description: "Stylish and space-saving for small balconies.",
-                slug: "product-20",
-                price: 29.99,
-                highlights: [
-                    "Comes with metal hanger",
-                    "Lightweight and sturdy",
-                    "Great for vertical gardening"
-                ]
-            }
-        ]
+        id: '4',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "05.jpg",
+        title: "Easy Assembly",
+        description: "Quick to set up with included tools and manual.",
+        slug: "product-4",
+        price: 109.99,
+        highlights: ["Tool-free assembly", "Includes instruction manual", "Compact packaging"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '7773ee71-f76a-4040-87a3-ac02688d74c9',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "01.jpg",
+        title: "Extra Tables Item 1",
+        description: "Extra Tables Item 1 with stylish finish and durable build.",
+        slug: "tables-extra-1",
+        price: 97.54,
+        highlights: ["Lightweight and sturdy", "Available in multiple colors", "Easy to assemble"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '20ed23bf-6463-44d2-a875-6b783f793d36',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "02.jpg",
+        title: "Extra Tables Item 2",
+        description: "Extra Tables Item 2 with stylish finish and durable build.",
+        slug: "tables-extra-2",
+        price: 18.45,
+        highlights: ["Lightweight and sturdy", "Eco-friendly material", "Compact and functional"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: 'a2775ae9-7186-468b-9bcd-159ff9fa4491',
+        categoryId: 1,
+        categoryTitle: "TABLES",
+        categoryPath: "tables",
+        filename: "03.jpg",
+        title: "Extra Tables Item 3",
+        description: "Extra Tables Item 3 with stylish finish and durable build.",
+        slug: "tables-extra-3",
+        price: 142.06,
+        highlights: ["Modern design", "Eco-friendly material", "Compact and functional"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '2-main',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "01.jpg",
+        title: "Main Image - ACCESSORIES",
+        description: "",
+        slug: "main-accessories",
+        price: 0,
+        highlights: [],
+        isMain: true,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '5',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "02.jpg",
+        title: "Brass Candle Holder",
+        description: "Elegant candle holder with antique brass finish.",
+        slug: "product-5",
+        price: 39.99,
+        highlights: ["Handcrafted brass body", "Stable round base", "Antique golden finish"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '6',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "03.jpg",
+        title: "Minimalist Clock",
+        description: "Perfect blend of style and function for modern spaces.",
+        slug: "product-6",
+        price: 59.99,
+        highlights: ["Silent ticking mechanism", "Sleek metal frame", "Battery operated"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '7',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "04.jpg",
+        title: "Decorative Vase",
+        description: "Handmade ceramic vase with unique patterns.",
+        slug: "product-7",
+        price: 45.99,
+        highlights: ["Ceramic build with hand-painted details", "Waterproof interior", "Great for dried or fresh flowers"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '8',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "05.jpg",
+        title: "Sculptural Piece",
+        description: "Artistic centerpiece to elevate any room’s design.",
+        slug: "product-8",
+        price: 69.99,
+        highlights: ["Modern abstract shape", "Crafted from resin", "Matte stone finish"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: 'a0850e63-9119-4902-9add-05c2f6617b56',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "01.jpg",
+        title: "Extra Accessories Item 1",
+        description: "Extra Accessories Item 1 with stylish finish and durable build.",
+        slug: "accessories-extra-1",
+        price: 71.6,
+        highlights: ["Compact and functional", "Eco-friendly material", "Easy to assemble"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: 'bec447a9-cabc-41c7-89d7-7d1c96a08bef',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        title: "Extra Accessories Item 2",
+        filename: "02.jpg",
+        description: "Extra Accessories Item 2 with stylish finish and durable build.",
+        slug: "accessories-extra-2",
+        price: 65.85,
+        highlights: ["Lightweight and sturdy", "Compact and functional", "Available in multiple colors"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '51efc331-3f57-4922-ab8d-d759b6f066e2',
+        categoryId: 2,
+        categoryTitle: "ACCESSORIES",
+        categoryPath: "accessories",
+        filename: "03.jpg",
+        title: "Extra Accessories Item 3",
+        description: "Extra Accessories Item 3 with stylish finish and durable build.",
+        slug: "accessories-extra-3",
+        price: 149.74,
+        highlights: ["Lightweight and sturdy", "Easy to assemble", "Modern design"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '3-main',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "01.jpg",
+        title: "Main Image - MIRRORS",
+        description: "",
+        slug: "main-mirrors",
+        price: 0,
+        highlights: [],
+        isMain: true,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '9',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "02.jpg",
+        title: "Vintage Oval Mirror",
+        description: "Classic design with a gold frame, perfect for entryways.",
+        slug: "product-9",
+        price: 89.99,
+        highlights: ["Vintage-style gold frame", "Beveled glass mirror", "Wall-mount ready"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '10',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "03.jpg",
+        title: "Modern Wall Mirror",
+        description: "Frameless mirror that adds depth and light to any room.",
+        slug: "product-10",
+        price: 99.99,
+        highlights: ["Frameless sleek design", "Edge-polished glass", "Easy wall mounting"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '11',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "04.jpg",
+        title: "Standing Mirror",
+        description: "Full-body mirror with wooden frame for bedrooms.",
+        slug: "product-11",
+        price: 129.99,
+        highlights: ["Full-length body view", "Solid wood frame", "Tiltable angle support"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '12',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "05.jpg",
+        title: "Decorative Mirror Set",
+        description: "Set of 3 mirrors to create a stylish wall collage.",
+        slug: "product-12",
+        price: 119.99,
+        highlights: ["Set of 3 mirrors", "Geometric designs", "Black metal borders"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: 'd030603e-b6f8-4099-9002-fb7e31ebc706',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "01.jpg",
+        title: "Extra Mirrors Item 1",
+        description: "Extra Mirrors Item 1 with stylish finish and durable build.",
+        slug: "mirrors-extra-1",
+        price: 52.6,
+        highlights: ["Modern design", "Easy to assemble", "Lightweight and sturdy"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '10ded220-7957-4c41-8096-38b4c1d0f1ee',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "02.jpg",
+        title: "Extra Mirrors Item 2",
+        description: "Extra Mirrors Item 2 with stylish finish and durable build.",
+        slug: "mirrors-extra-2",
+        price: 116.27,
+        highlights: ["Lightweight and sturdy", "Scratch-resistant surface", "Easy to assemble"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '7ec0e6e6-96ef-4386-9d4f-36f3fef032b7',
+        categoryId: 3,
+        categoryTitle: "MIRRORS",
+        categoryPath: "mirrors",
+        filename: "03.jpg",
+        title: "Extra Mirrors Item 3",
+        description: "Extra Mirrors Item 3 with stylish finish and durable build.",
+        slug: "mirrors-extra-3",
+        price: 60.54,
+        highlights: ["Compact and functional", "Easy to assemble", "Eco-friendly material"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '4-main',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "01.jpg",
+        title: "Main Image - PLATES",
+        description: "",
+        slug: "main-plates",
+        price: 0,
+        highlights: [],
+        isMain: true,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '13',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "02.jpg",
+        title: "Stoneware Dinner Plate",
+        description: "Rustic charm with a durable stoneware construction.",
+        slug: "product-13",
+        price: 24.99,
+        highlights: ["Chip-resistant stoneware", "Rustic matte glaze", "Microwave & dishwasher safe"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '14',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "03.jpg",
+        title: "Porcelain Plate Set",
+        description: "Elegant white finish, ideal for formal dinners.",
+        slug: "product-14",
+        price: 54.99,
+        highlights: ["Set of 6 plates", "Glossy porcelain surface", "Scratch-resistant finish"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '15',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "04.jpg",
+        title: "Decorative Side Plate",
+        description: "Perfect for serving appetizers or desserts.",
+        slug: "product-15",
+        price: 19.99,
+        highlights: ["8-inch diameter", "Hand-painted border", "Perfect for sides or snacks"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '16',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "05.jpg",
+        title: "Colorful Collection",
+        description: "Mix and match vibrant styles for a playful table.",
+        slug: "product-16",
+        price: 34.99,
+        highlights: ["4 multi-color designs", "Vibrant and fade-proof", "Safe for daily use"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '0f45738b-9d48-4e82-a330-b19f69178b58',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "01.jpg",
+        title: "Extra Plates Item 1",
+        description: "Extra Plates Item 1 with stylish finish and durable build.",
+        slug: "plates-extra-1",
+        price: 68.26,
+        highlights: ["Scratch-resistant surface", "Easy to assemble", "Compact and functional"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '5030ce39-9b61-48fc-b4ce-2b9b8caf34d6',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "02.jpg",
+        title: "Extra Plates Item 2",
+        description: "Extra Plates Item 2 with stylish finish and durable build.",
+        slug: "plates-extra-2",
+        price: 40.56,
+        highlights: ["Modern design", "Eco-friendly material", "Scratch-resistant surface"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: 'b1587011-54a9-4509-b31b-1043395e3fb3',
+        categoryId: 4,
+        categoryTitle: "PLATES",
+        categoryPath: "plates",
+        filename: "03.jpg",
+        title: "Extra Plates Item 3",
+        description: "Extra Plates Item 3 with stylish finish and durable build.",
+        slug: "plates-extra-3",
+        price: 44.37,
+        highlights: ["Eco-friendly material", "Lightweight and sturdy", "Compact and functional"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '5-main',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "01.jpg",
+        title: "Main Image - POTS",
+        description: "",
+        slug: "main-pots",
+        price: 0,
+        highlights: [],
+        isMain: true,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '17',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "02.jpg",
+        title: "Terracotta Pot",
+        description: "Natural finish that allows roots to breathe.",
+        slug: "product-17",
+        price: 22.49,
+        highlights: ["Classic terracotta material", "Porous and breathable", "Great for indoor plants"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '18',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "03.jpg",
+        title: "Self-Watering Planter",
+        description: "Modern solution to keep your plants hydrated.",
+        slug: "product-18",
+        price: 32.99,
+        highlights: ["Built-in water reservoir", "Reduces watering frequency", "Ideal for busy plant lovers"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '19',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "04.jpg",
+        title: "Ceramic Herb Pot",
+        description: "Perfect for kitchen windowsills and indoor herbs.",
+        slug: "product-19",
+        price: 27.99,
+        highlights: ["Glazed ceramic design", "Compact for small spaces", "Includes drainage hole"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '20',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "05.jpg",
+        title: "Hanging Basket",
+        description: "Stylish and space-saving for small balconies.",
+        slug: "product-20",
+        price: 29.99,
+        highlights: ["Comes with metal hanger", "Lightweight and sturdy", "Great for vertical gardening"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: true
+    },
+    {
+        id: '230b8516-ad2b-4e06-99f4-1a25e5b9db7d',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "01.jpg",
+        title: "Extra Pots Item 1",
+        description: "Extra Pots Item 1 with stylish finish and durable build.",
+        slug: "pots-extra-1",
+        price: 56.98,
+        highlights: ["Easy to assemble", "Scratch-resistant surface", "Lightweight and sturdy"],
+        isMain: false,
+        isUnique: false
+        ,
+        showOnProduct: false
+    },
+    {
+        id: '60169124-7747-4c14-ad6d-81d83d13f943',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "02.jpg",
+        title: "Extra Pots Item 2",
+        description: "Extra Pots Item 2 with stylish finish and durable build.",
+        slug: "pots-extra-2",
+        price: 34.39,
+        highlights: ["Lightweight and sturdy", "Eco-friendly material", "Compact and functional"],
+        isMain: false,
+        isUnique: false,
+        showOnProduct: false
+    },
+    {
+        id: '57f297c7-812e-4337-9fd8-757b27810c6a',
+        categoryId: 5,
+        categoryTitle: "POTS",
+        categoryPath: "pots",
+        filename: "03.jpg",
+        title: "Extra Pots Item 3",
+        description: "Extra Pots Item 3 with stylish finish and durable build.",
+        slug: "pots-extra-3",
+        price: 85.65,
+        highlights: ["Easy to assemble", "Compact and functional", "Lightweight and sturdy"],
+        isMain: false,
+        isUnique: false,
+        showOnProduct: false
     }
 ];
 
-export default productSections;
+export default products;
