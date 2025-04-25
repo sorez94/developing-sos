@@ -7,7 +7,7 @@ export default function CartPage() {
     const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
     return (
-        <div className="px-6 py-20 max-w-5xl mx-auto mt-20">
+        <div className="px-6 py-20 max-w-5xl mx-auto mt-20 min-h-[45vh]">
             <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">Your Shopping Cart</h1>
 
             {items.length === 0 ? (
