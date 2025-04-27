@@ -19,6 +19,7 @@
     "lucide-react": "^0.460.0",
     "next": "15.0.3",
     "next-intl": "^3.25.1",
+    "pg": "^8.15.6",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.53.2",

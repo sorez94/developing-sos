@@ -1,9 +1,9 @@
 'use client'
 
-import { useCartStore } from '@/stores/cartStore'
+import {useCartStore} from '@/stores/cartStore'
 
 export default function CartPage() {
-    const { items, removeFromCart, clearCart } = useCartStore()
+    const {items, removeFromCart, clearCart} = useCartStore()
     const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
     return (
@@ -11,7 +11,10 @@ export default function CartPage() {
             <h1 className="text-4xl font-bold mb-10 text-center text-gray-800">Your Shopping Cart</h1>
 
             {items.length === 0 ? (
-                <p className="text-center text-gray-500 text-lg">Your cart is empty.</p>
+                <div className='flex justify-center items-center flex-col gap-4'>
+                    <img src='/icons/empty-cart.png' width={200} height={200}/>
+                    <p className="text-center text-gray-500 lg:text-2xl xl:lg:text-2xl 2xl:lg:text-2xl lg:text-lg">Your cart is empty.</p>
+                </div>
             ) : (
                 <>
                     <div className="space-y-6">
