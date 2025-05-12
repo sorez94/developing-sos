@@ -3,7 +3,7 @@
 import LocaleSwitcher from "./LocaleSwitcher";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import clsx from "clsx";
 import { useState } from "react";
 import { Menu, X, ShoppingBasket, UserRound } from "lucide-react";
@@ -16,6 +16,7 @@ export default function NavBar() {
     const locale = useLocale();
     const pathname = usePathname();
     const t = useTranslations("NavBar");
+    const router = useRouter();
     const [menuOpen, setMenuOpen] = useState(false);
     const cartCount = useCartStore((state) =>
         state.items.reduce((sum, item) => sum + item.quantity, 0)
@@ -34,9 +35,9 @@ export default function NavBar() {
             <div className="flex items-center justify-between py-3 px-4 sm:px-6 md:px-10 lg:px-20
                 lg:h-[120px] md:h-[80px] sm:h-[80px] backdrop-blur-xl bg-gradient-to-r from-white/30 to-white/50
                 border-b border-white/20 shadow-md transition-all duration-300">
-                {/* لوگو */}
                 <motion.div
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{scale: 1.05}}
+                    onClick={() => router.push(`/${locale}`)} // 👈 navigate to homepage
                     className="flex items-center gap-2 overflow-hidden flex-shrink-0 cursor-pointer"
                 >
                     <img
@@ -51,7 +52,7 @@ export default function NavBar() {
 
                 {/* لینک‌های دسکتاپ */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 gap-6 lg:gap-8">
-                    {links.map(({ href, label }) => (
+                    {links.map(({href, label}) => (
                         <Link
                             key={href}
                             href={href}
@@ -70,12 +71,13 @@ export default function NavBar() {
                     {/* موبایل */}
                     <div className="md:hidden flex items-center gap-2">
                         <Link href={`/${locale}/account`}>
-                            <UserRound className="h-5 w-5 cursor-pointer" />
+                            <UserRound className="h-5 w-5 cursor-pointer"/>
                         </Link>
                         <Link href={`/${locale}/cart`} className="relative">
-                            <ShoppingBasket className="h-5 w-5 cursor-pointer" />
+                            <ShoppingBasket className="h-5 w-5 cursor-pointer"/>
                             {cartCount > 0 && (
-                                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold rounded-full px-1.5 py-0.5">
+                                <span
+                                    className="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] font-bold rounded-full px-1.5 py-0.5">
                                     {cartCount}
                                 </span>
                             )}
@@ -92,13 +94,13 @@ export default function NavBar() {
                     {/* دکمه همبرگر */}
                     <div className="md:hidden">
                         <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-                            {menuOpen ? <X size={26} /> : <Menu size={26} />}
+                            {menuOpen ? <X size={26}/> : <Menu size={26}/>}
                         </button>
                     </div>
 
                     {/* دسکتاپ */}
                     <div className="hidden md:flex items-center gap-2">
-                        <LocaleSwitcher />
+                        <LocaleSwitcher/>
                     </div>
                 </div>
             </div>
@@ -107,10 +109,10 @@ export default function NavBar() {
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{height: 0, opacity: 0}}
+                        animate={{height: "auto", opacity: 1}}
+                        exit={{height: 0, opacity: 0}}
+                        transition={{duration: 0.3}}
                         className="md:hidden overflow-hidden absolute left-0 w-full z-40 backdrop-blur-md bg-white/70 border-t border-white/30 shadow-xl"
                         style={{ top: "64px" }}
                     >
