@@ -5,18 +5,21 @@ import Banner from "@/components/aboutus/Banner";
 export default function Page() {
     return (
         <>
-            <Banner/>
-            <h1 className='text-center text-[26px] leading-[26px] my-[100px] whitespace-break-spaces'> COMPANY  PROFILE </h1>
-            <section className="py-16 max-w-5xl mx-auto pt-[10px] pb-[110px] text-gray-800">
-                <div className="flex gap-4">
-                    <img src='/images/about-us/about-us-company.jpg'/>
-                    <div>
-                        <div className='mb-10 ml-6'>
-                            <h1 className='text-[#4b4e53] text-[55px] leading-[55px]'> ABOUT </h1>
-                            <h1 className='text-[#4b4e53] text-[55px] leading-[55px]'> US </h1>
-                            <div className='bg-[#4b4e53] mt-[15px] h-[3px] w-[100px] bg-[#4b4e53]'></div>
+            <Banner />
+            <h1 className='text-center text-[22px] md:text-[26px] leading-[26px] my-[60px] md:my-[100px] px-4 whitespace-break-spaces'>
+                COMPANY PROFILE
+            </h1>
+
+            <section className="py-16 px-4 max-w-5xl mx-auto pt-[10px] pb-[80px] md:pb-[110px] text-gray-800">
+                <div className="flex flex-col md:flex-row gap-8">
+                    <img src='/images/about-us/about-us-company.jpg' alt="Company" className="w-full md:w-1/2 object-cover" />
+                    <div className="md:w-1/2">
+                        <div className='mb-10 md:ml-6'>
+                            <h1 className='text-[#4b4e53] text-[36px] md:text-[55px] leading-tight'>ABOUT</h1>
+                            <h1 className='text-[#4b4e53] text-[36px] md:text-[55px] leading-tight'>US</h1>
+                            <div className='bg-[#4b4e53] mt-4 h-[3px] w-[100px]'></div>
                         </div>
-                        <p className="text-[14px] whitespace-break-spaces">
+                        <p className="text-[14px] whitespace-pre-wrap">
                             {`Kamer Marble has been established in 1989, is one of the leading companies of Turkish stone
 business and specialized in producing the premium quality slabs and variable finished goods
 of Marble&Onyx&Travertine. Kamer Marble constantly search for the best blocks especially in
@@ -39,35 +42,35 @@ products, increasing in production capacity & quality and customer satisfaction.
                     </div>
                 </div>
             </section>
-            <section className="flex w-full">
-                <div className="w-1/2 flex flex-col mx-auto px-[50px] pt-[145px] pb-[140px] max-w-[500px]">
+
+            <section className="flex flex-col md:flex-row w-full">
+                <div className="md:w-1/2 w-full flex flex-col mx-auto px-4 md:px-[50px] pt-[60px] md:pt-[145px] pb-[60px] md:pb-[140px] max-w-[500px]">
                     <div className="mb-10">
-                        <h1 className='text-[#4b4e53] text-[45px] leading-[45px]'>MISSION</h1>
-                        <div className='mt-[15px] h-[3px] w-[100px] bg-[#4b4e53]'></div>
+                        <h1 className='text-[#4b4e53] text-[32px] md:text-[45px] leading-tight'>MISSION</h1>
+                        <div className='mt-4 h-[3px] w-[100px] bg-[#4b4e53]'></div>
                     </div>
-                    <p>
+                    <p className="text-[14px]">
                         Kamer Marble is dedicated to producing and exporting the Natural Stone with the highest
                         quality standards and providing the best customer services by pursuing business through
                         innovation and advanced technology.
                     </p>
                 </div>
-                <img className="w-1/2 object-cover" src="/images/about-us/mission.jpg"/>
+                <img className="md:w-1/2 w-full object-cover" src="/images/about-us/mission.jpg" alt="Mission" />
             </section>
-            <section className="flex w-full">
-                <img className="w-1/2 object-cover" src="/images/about-us/vision.jpg"/>
-                <div className="w-1/2 flex flex-col mx-auto px-[50px] pt-[145px] pb-[140px] max-w-[500px]">
+
+            <section className="flex flex-col-reverse md:flex-row w-full">
+                <img className="md:w-1/2 w-full object-cover" src="/images/about-us/vision.jpg" alt="Vision" />
+                <div className="md:w-1/2 w-full flex flex-col mx-auto px-4 md:px-[50px] pt-[60px] md:pt-[145px] pb-[60px] md:pb-[140px] max-w-[500px]">
                     <div className="mb-10">
-                        <h1 className='text-[#4b4e53] text-[45px] leading-[45px]'>VISION</h1>
-                        <div className='mt-[15px] h-[3px] w-[100px] bg-[#4b4e53]'></div>
+                        <h1 className='text-[#4b4e53] text-[32px] md:text-[45px] leading-tight'>VISION</h1>
+                        <div className='mt-4 h-[3px] w-[100px] bg-[#4b4e53]'></div>
                     </div>
-                    <p>
+                    <p className="text-[14px]">
                         Kamer Marble will the preferred partner in natural stone business providing the highest quality
                         and exclusive products that exceeds the expectations of our esteemed customers worldwide.
                     </p>
                 </div>
             </section>
-
         </>
-
     );
 }
