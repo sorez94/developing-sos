@@ -39,7 +39,7 @@ export default function ContactPage() {
             theme: "colored",
             transition: Slide,
         });
-        reset(); // reset form fields
+        reset();
     };
 
     return (
@@ -58,8 +58,8 @@ export default function ContactPage() {
 
                 {/* 🔵 Contact Form */}
                 <div className="order-1 lg:order-2">
-                    <h1 className="mb-10 px-[25px] pt-[22px] pb-[24px] font-[300] text-[30px] leading-[36px] text-[#4b4e53] border-l-2 border-[#4b4e53] font-['Open_Sans','Arial','Helvetica','sans-serif']">
-                        CONTACT <span className="font-bold">US</span>
+                    <h1 className="mb-10 px-[25px] pt-[22px] pb-[24px] text-[30px] leading-[36px] text-[#4b4e53] border-l-2 border-[#4b4e53]">
+                        CONTACT US
                     </h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 text-[#4b4e53]">
                         <div>
@@ -96,17 +96,16 @@ export default function ContactPage() {
                             {errors.message && (
                                 <p className="text-xs text-red-600 mt-1">{errors.message.message}</p>
                             )}
+                            <motion.button
+                                whileHover={{scale: 1.05}}
+                                whileTap={{scale: 0.95}}
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="mt-6 text-sm text-black hover:text-white bg-[rgb(202,215,178)] py-2 px-6 rounded hover:bg-green-700 disabled:opacity-60"
+                            >
+                                {isSubmitting ? "Sending..." : "Send Message"}
+                            </motion.button>
                         </div>
-
-                        <motion.button
-                            whileHover={{scale: 1.05}}
-                            whileTap={{scale: 0.95}}
-                            type="submit"
-                            disabled={isSubmitting}
-                            className="mt-6 text-sm text-black hover:text-white bg-[rgb(202,215,178)] py-2 px-6 rounded hover:bg-green-700 disabled:opacity-60"
-                        >
-                            {isSubmitting ? "Sending..." : "Send Message"}
-                        </motion.button>
                     </form>
                 </div>
             </div>
