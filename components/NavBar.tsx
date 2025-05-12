@@ -45,14 +45,14 @@ export default function NavBar() {
                         alt="logo"
                         className="w-[30px] sm:w-[40px] md:w-[50px] lg:w-[60px] xl:w-[70px] 2xl:w-[80px]"
                     />
-                    <h1 className="text-sm sm:text-base md:text-[14px] lg:text-[16px] xl:text-[20px] 2xl:text-[22px] font-semibold whitespace-nowrap">
+                    <h1 className="select-none text-sm sm:text-base md:text-[14px] lg:text-[16px] xl:text-[20px] 2xl:text-[22px] font-semibold whitespace-nowrap">
                         Sense Of Stone
                     </h1>
                 </motion.div>
 
                 {/* لینک‌های دسکتاپ */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 gap-6 lg:gap-8">
-                    {links.map(({href, label}) => (
+                {links.map(({href, label}) => (
                         <Link
                             key={href}
                             href={href}
