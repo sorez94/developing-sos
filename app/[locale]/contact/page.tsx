@@ -30,14 +30,14 @@ export default function ContactPage() {
     const onSubmit = async (data: any) => {
         try {
             const result = await emailjs.send(
-                "service_jyldxce",       // e.g. "service_xxx123"
-                "template_probfny",      // e.g. "template_abc456"
+                "service_jyldxce",
+                "template_probfny",
                 {
                     name: data.name,
                     email: data.email,
                     message: data.message,
                 },
-                "K3DmB3sl-M7nC1B2Q"        // Use the public key you got here
+                "K3DmB3sl-M7nC1B2Q"
             );
 
             toast.success('Thank you! Your message has been sent successfully. We\'ll get back to you shortly.', {
