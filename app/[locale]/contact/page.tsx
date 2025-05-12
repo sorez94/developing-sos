@@ -1,6 +1,6 @@
 "use client";
 
-import {useState} from "react";
+import React, {useState} from "react";
 import {motion} from "framer-motion";
 
 export default function ContactPage() {
@@ -19,8 +19,8 @@ export default function ContactPage() {
                         referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div>
-                    <h1 className="mb-10 px-[25px] pt-[22px] pb-[24px] font-[300] text-[30px] leading-[36px] text-[#4b4e53] border-l-2 border-[#4b4e53] font-['Open_Sans','Arial','Helvetica','sans-serif']">Contact
-                        Us</h1>
+                    <h1 className="mb-10 px-[25px] pt-[22px] pb-[24px] font-[300] text-[30px] leading-[36px] text-[#4b4e53] border-l-2 border-[#4b4e53] font-['Open_Sans','Arial','Helvetica','sans-serif']">CONTACT
+                        US</h1>
                     {submitted ? (
                         <motion.div
                             initial={{opacity: 0}}
@@ -62,16 +62,15 @@ export default function ContactPage() {
                                     rows={4}
                                     className="w-full border-b border-gray-400 bg-transparent focus:outline-none focus:border-black text-sm py-2 resize-y"
                                 />
+                                <motion.button
+                                    whileHover={{scale: 1.05}}
+                                    whileTap={{scale: 0.95}}
+                                    type="submit"
+                                    className="mt-6 text-sm text-black hover:text-white bg-[rgb(202,215,178)] py-2 px-6 rounded hover:bg-green-700"
+                                >
+                                    Send Message
+                                </motion.button>
                             </div>
-
-                            <motion.button
-                                whileHover={{scale: 1.05}}
-                                whileTap={{scale: 0.95}}
-                                type="submit"
-                                className="mt-6 bg-black text-white py-2 px-6 rounded shadow hover:bg-gray-800 transition-all"
-                            >
-                                Send Message
-                            </motion.button>
                         </form>
                     )}
                 </div>
