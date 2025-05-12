@@ -7,6 +7,8 @@ import * as Yup from "yup";
 import {motion} from "framer-motion";
 import {Slide, toast} from "react-toastify";
 
+import emailjs from "emailjs-com";
+
 const schema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string().email("Invalid email address").required("Email is required"),
@@ -25,21 +27,45 @@ export default function ContactPage() {
         resolver: yupResolver(schema),
     });
 
-    const onSubmit = (data: any) => {
-        console.log("Form Data:", data);
-        setSubmitted(true);
-        toast.success('Thank you! Your message has been sent successfully. We\'ll get back to you shortly.', {
-            position: "top-center",
-            autoClose: 10000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Slide,
-        });
-        reset();
+    const onSubmit = async (data: any) => {
+        try {
+            const result = await emailjs.send(
+                "service_jyldxce",       // e.g. "service_xxx123"
+                "template_probfny",      // e.g. "template_abc456"
+                {
+                    name: data.name,
+                    email: data.email,
+                    message: data.message,
+                },
+                "K3DmB3sl-M7nC1B2Q"        // Use the public key you got here
+            );
+
+            toast.success('Thank you! Your message has been sent successfully. We\'ll get back to you shortly.', {
+                position: "top-center",
+                autoClose: 10000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Slide,
+            });
+            setSubmitted(true);
+            reset();
+        } catch (error) {
+            toast.error('Failed to send message. Please try again later.', {
+                position: "top-center",
+                autoClose: 10000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Slide,
+            });
+        }
     };
 
     return (
