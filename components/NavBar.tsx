@@ -2,15 +2,15 @@
 
 import LocaleSwitcher from "./LocaleSwitcher";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 import {usePathname, useRouter} from "next/navigation";
 import clsx from "clsx";
-import { useState } from "react";
-import { Menu, X, ShoppingBasket, UserRound } from "lucide-react";
-import { useCartStore } from "@/stores/cartStore";
-import { routing } from "@/i18n/routing";
+import {useState} from "react";
+import {Menu, ShoppingBasket, UserRound, X} from "lucide-react";
+import {useCartStore} from "@/stores/cartStore";
+import {routing} from "@/i18n/routing";
 import LocaleSwitcherSelect from "@/components/LocaleSwitcherSelect";
-import { motion, AnimatePresence } from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 export default function NavBar() {
     const locale = useLocale();
@@ -23,11 +23,10 @@ export default function NavBar() {
     );
 
     const links = [
-        { href: `/${locale}`, label: t("home") },
-        { href: `/${locale}/product`, label: t("products") },
-        { href: `/${locale}/contact-us`, label: t("contact") },
-        { href: `/${locale}/about-us`, label: t("aboutUs") },
-        { href: `/${locale}/faq`, label: t("FAQ") },
+        {href: `/${locale}`, label: t("home")},
+        {href: `/${locale}/product`, label: t("products")},
+        {href: `/${locale}/contact-us`, label: t("contact")},
+        {href: `/${locale}/about-us`, label: t("aboutUs")},
     ];
 
     return (
@@ -49,10 +48,8 @@ export default function NavBar() {
                         Sense Of Stone
                     </h1>
                 </motion.div>
-
-                {/* لینک‌های دسکتاپ */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 gap-6 lg:gap-8">
-                {links.map(({href, label}) => (
+                    {links.map(({href, label}) => (
                         <Link
                             key={href}
                             href={href}
@@ -65,8 +62,6 @@ export default function NavBar() {
                         </Link>
                     ))}
                 </div>
-
-                {/* آیکون‌ها و منوی موبایل */}
                 <div className="flex items-center gap-3">
                     {/* موبایل */}
                     <div className="md:hidden flex items-center gap-2">
@@ -90,22 +85,16 @@ export default function NavBar() {
                             ))}
                         </LocaleSwitcherSelect>
                     </div>
-
-                    {/* دکمه همبرگر */}
                     <div className="md:hidden">
                         <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
                             {menuOpen ? <X size={26}/> : <Menu size={26}/>}
                         </button>
                     </div>
-
-                    {/* دسکتاپ */}
                     <div className="hidden md:flex items-center gap-2">
                         <LocaleSwitcher/>
                     </div>
                 </div>
             </div>
-
-            {/* منوی موبایل بازشونده با انیمیشن */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
@@ -114,10 +103,10 @@ export default function NavBar() {
                         exit={{height: 0, opacity: 0}}
                         transition={{duration: 0.3}}
                         className="md:hidden overflow-hidden absolute left-0 w-full z-40 backdrop-blur-md bg-white/70 border-t border-white/30 shadow-xl"
-                        style={{ top: "64px" }}
+                        style={{top: "64px"}}
                     >
                         <div className="flex flex-col items-start gap-4 px-4 py-4">
-                            {links.map(({ href, label }) => (
+                            {links.map(({href, label}) => (
                                 <Link
                                     key={href}
                                     href={href}
