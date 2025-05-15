@@ -32,8 +32,8 @@ export default function LoginPage() {
     const onSubmit = (data: { userName: string, password: string }) => {
         if (data.userName === 'administrator' && data.password === 'MeymoonSag131722!!!.2000') {
             login({
-                name: 'ادمین عزیز',
-                role: 'مدیر سیستم',
+                name: 'administrator',
+                role: 'admin',
                 avatar: '/images/profile.jpg',
             })
             toast.success('Login Successfully')
