@@ -47,13 +47,13 @@ npm run dev
 # Visit http://localhost:3000 to view the app
 ```
 
-## 📂 Project Structure
+## 🌐 Localization
+Supports the following languages:
 
-```bash
-/pages            # Next.js pages (with SSR)
-  /[locale]       # i18n structure
-  /products       # Product listing pages
-/components       # Reusable UI components
-/store            # Redux configuration
-/public           # Static assets
-```
+🇬🇧 English
+
+🇮🇷 فارسی (Persian)
+
+## 🚧 Status
+This project is currently in active development.
+New features, optimizations, and UI improvements are being added regularly.
