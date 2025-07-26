@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🪨 Sense of Stone - Product Showroom Website (in development)
 
-## Getting Started
+A modern, multi-language product showroom website built with [Next.js](https://nextjs.org/), focused on performance, SEO, and user experience.
 
-First, run the development server:
+🔗 **Live Preview**: [https://developing-sos-nipj.vercel.app/en](https://developing-sos-nipj.vercel.app/en)
+
+## ✨ Features
+
+- ⚙️ **Next.js with Server-Side Rendering (SSR)**  
+  Built using Next.js to optimize page load time and SEO performance.
+
+- 🌍 **Multi-language Support (i18n)**  
+  Fully localized content in both **English** and **Persian**.
+
+- 🛒 **Shopping Cart with Redux**  
+  A functional and extendable shopping cart system using Redux for global state management.
+
+- 🧭 **Category-Based Filtering**  
+  Browse products by category with dynamic filtering options for an improved user experience.
+
+- 📱 **Responsive & Mobile-First Design**  
+  Optimized for all devices with smooth navigation and a clean, modern layout.
+
+- 🔍 **SEO-Friendly**  
+  Structured pages with server-rendered content and localized metadata for better search visibility.
+
+## 🛠️ Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [react-i18next](https://react.i18next.com/)
+- [Vercel](https://vercel.com/) for deployment
+
+## 📦 Installation & Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/sense-of-stone.git
+cd sense-of-stone
+
+# Install dependencies
+npm install
+
+# Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Visit http://localhost:3000 to view the app
