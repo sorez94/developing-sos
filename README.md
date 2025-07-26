@@ -45,7 +45,7 @@ npm install
 npm run dev
 
 # Visit http://localhost:3000 to view the app
-```bash
+```
 
 ## 📂 Project Structure
 
@@ -56,4 +56,4 @@ npm run dev
 /components       # Reusable UI components
 /store            # Redux configuration
 /public           # Static assets
-```bash
+```
