@@ -31,31 +31,6 @@ A modern, multi-language product showroom website built with [Next.js](https://n
 - [react-i18next](https://react.i18next.com/)
 - [Vercel](https://vercel.com/) for deployment
 
-
-## 🖼️ Screenshots
-
-> A preview of the current landing page:
-
-*Desktop view*
-![Screenshot - Desktop](./screenshots/desktop-01.PNG)
-
-![Screenshot - Desktop](./screenshots/desktop-02.PNG)
-
-![Screenshot - Desktop](./screenshots/desktop-03.PNG)
-
-![Screenshot - Desktop](./screenshots/desktop-04.PNG)
-
-
-*Mobile view*
-
-![Screenshot - Mobile](./screenshots/mobile-01.PNG)
-
-![Screenshot - Mobile](./screenshots/mobile-02.PNG)
-
-![Screenshot - Mobile](./screenshots/mobile-03.PNG)
-
-![Screenshot - Mobile](./screenshots/mobile-04.PNG)
-
 ## 📦 Installation & Setup
 
 ```bash
@@ -82,3 +57,28 @@ Supports the following languages:
 ## 🚧 Status
 This project is currently in active development.
 New features, optimizations, and UI improvements are being added regularly.
+
+
+## 🖼️ Screenshots
+
+> A preview of the current landing page:
+
+*Desktop view*
+![Screenshot - Desktop](./screenshots/desktop-01.PNG)
+
+![Screenshot - Desktop](./screenshots/desktop-02.PNG)
+
+![Screenshot - Desktop](./screenshots/desktop-03.PNG)
+
+![Screenshot - Desktop](./screenshots/desktop-04.PNG)
+
+
+*Mobile view*
+
+![Screenshot - Mobile](./screenshots/mobile-01.PNG)
+
+![Screenshot - Mobile](./screenshots/mobile-02.PNG)
+
+![Screenshot - Mobile](./screenshots/mobile-03.PNG)
+
+![Screenshot - Mobile](./screenshots/mobile-04.PNG)
