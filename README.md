@@ -38,14 +38,22 @@ A modern, multi-language product showroom website built with [Next.js](https://n
 
 *Desktop view*
 ![Screenshot - Desktop](./screenshots/desktop-01.PNG)
+
 ![Screenshot - Desktop](./screenshots/desktop-02.PNG)
+
 ![Screenshot - Desktop](./screenshots/desktop-03.PNG)
+
 ![Screenshot - Desktop](./screenshots/desktop-04.PNG)
 
+
 *Mobile view*
+
 ![Screenshot - Mobile](./screenshots/mobile-01.PNG)
+
 ![Screenshot - Mobile](./screenshots/mobile-02.PNG)
+
 ![Screenshot - Mobile](./screenshots/mobile-03.PNG)
+
 ![Screenshot - Mobile](./screenshots/mobile-04.PNG)
 
 ## 📦 Installation & Setup
