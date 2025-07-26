@@ -45,3 +45,14 @@ npm install
 npm run dev
 
 # Visit http://localhost:3000 to view the app
+
+
+## 📂 Project Structure
+
+```bash
+/pages            # Next.js pages (with SSR)
+  /[locale]       # i18n structure
+  /products       # Product listing pages
+/components       # Reusable UI components
+/store            # Redux configuration
+/public           # Static assets
